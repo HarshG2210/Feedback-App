@@ -6,10 +6,11 @@ import FeedbackItem from "./FeedbackItem";
 
 // import propTypes from "prop-types";
 
-function FeedbackList({
-  // feedback,
-  // handleDelete,
-}) {
+function FeedbackList() {
+//   {
+//   feedback,
+//   handleDelete,
+// }
   const { feedback } = useContext(FeedbackContext);
   // console.log("feedback", feedback);
   if (!feedback || feedback.length === 0) {

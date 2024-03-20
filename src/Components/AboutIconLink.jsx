@@ -11,7 +11,7 @@ function AboutIconLink() {
         search: "?1234",
         hash:"#hello"
       }}> */}
-        <FaQuestion />
+        <FaQuestion size={30}/>
       </Link>
     </div>
   );

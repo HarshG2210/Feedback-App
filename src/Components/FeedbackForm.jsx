@@ -6,9 +6,9 @@ import FeedbackContext from "./context/FeedbackContext";
 import RatingSelect from "./RatingSelect";
 
 function FeedbackForm(
-  {
-    //  handleAdd
-  }
+  // {
+  //   handleAdd
+  // }
 ) {
   const [text, setText] = useState("");
   const [message, setMessage] = useState("");
