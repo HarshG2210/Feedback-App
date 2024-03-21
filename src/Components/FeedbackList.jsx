@@ -3,20 +3,23 @@ import React, { useContext } from "react";
 
 import FeedbackContext from "./context/FeedbackContext";
 import FeedbackItem from "./FeedbackItem";
+import Loader from "./shared/Loader";
 
 // import propTypes from "prop-types";
 
 function FeedbackList() {
-//   {
-//   feedback,
-//   handleDelete,
-// }
-  const { feedback } = useContext(FeedbackContext);
+  //   {
+  //   feedback,
+  //   handleDelete,
+  // }
+  const { feedback, isLoading } = useContext(FeedbackContext);
   // console.log("feedback", feedback);
-  if (!feedback || feedback.length === 0) {
+  if (!isLoading && (!feedback || feedback.length === 0)) {
     return <div>No Feedback Data</div>;
   }
-  return (
+  return isLoading ? (
+    <Loader />
+  ) : (
     <div className="feedback-List">
       <AnimatePresence>
         {feedback.map((item) => {
@@ -37,14 +40,14 @@ function FeedbackList() {
         })}
       </AnimatePresence>
       {/* {feedback.map((item) => {
-        return (
-          <FeedbackItem
-            key={item.id}
-            feedback={item}
-            handleDelete={handleDelete}
-          />
-        );
-      })} */}
+    return (
+      <FeedbackItem
+        key={item.id}
+        feedback={item}
+        handleDelete={handleDelete}
+      />
+    );
+  })} */}
     </div>
   );
 }
